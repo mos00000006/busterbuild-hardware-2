@@ -2071,3 +2071,46 @@ gap:12px;
     }
 
 }
+/* MOBILE FIX */
+@media (max-width:768px){
+
+    .header-container{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .icons{
+        justify-content:center;
+    }
+
+    nav .container{
+        flex-direction:column;
+    }
+
+    nav ul{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    nav li{
+        margin:0;
+    }
+
+    .quote-btn{
+        margin:15px 0;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+}
