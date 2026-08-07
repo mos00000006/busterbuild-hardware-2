@@ -438,10 +438,6 @@ function completeOrder(){
     orderMessage += "%0A%0ATotal: R" + total.toFixed(2);
 
     localStorage.setItem("lastOrder", JSON.stringify(cart));
-
-    localStorage.removeItem("cart");
-
-    localStorage.setItem("lastOrder", JSON.stringify(cart));
 localStorage.removeItem("cart");
 
 window.location.href = "success.html";
