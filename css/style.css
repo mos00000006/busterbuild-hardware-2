@@ -1370,3 +1370,30 @@ body{
 .top-bar span{
     margin:0;
 }
+@media (max-width:768px){
+
+    .top-bar .container{
+        display:grid;
+        grid-template-columns:1fr auto;
+        grid-template-areas:
+            "left right"
+            "center center";
+        row-gap:8px;
+        align-items:center;
+    }
+
+    .left{
+        grid-area:left;
+    }
+
+    .center{
+        grid-area:center;
+        text-align:center;
+        font-size:14px;
+    }
+
+    .right{
+        grid-area:right;
+        justify-self:end;
+    }
+}
