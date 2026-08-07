@@ -441,10 +441,10 @@ function completeOrder(){
 
     localStorage.removeItem("cart");
 
-    let storeWhatsApp = "27632513656";
+    localStorage.setItem("lastOrder", JSON.stringify(cart));
+localStorage.removeItem("cart");
 
-    window.location.href =
-        "https://wa.me/" + storeWhatsApp + "?text=" + orderMessage;
+window.location.href = "order-success.html";
 
 }
 
