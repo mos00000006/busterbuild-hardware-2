@@ -690,11 +690,12 @@ nav a:hover{
 
 .page-banner{
     position:relative;
-    height:300px;
-    background:url("../images/hero.jpg") center center/cover no-repeat;
+    height:420px;
+    background:url("../pictures/product\ pick.jpeg") center center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
+    text-align: center;
 }
 
 .page-banner::before{
