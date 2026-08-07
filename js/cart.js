@@ -400,18 +400,45 @@ function completeOrder(){
     orderMessage += "%0AProducts:%0A";
 
 
-    cart.forEach(function(item){
+    cart.forEach((item, index) => {
 
-        orderMessage += 
-        item.name + 
-        " x" + 
-        item.quantity + 
-        " - R" + 
-        (item.price * item.quantity).toFixed(2) + 
-        "%0A";
+    let lineTotal = item.price * item.quantity;
 
-    });
+    total += lineTotal;
 
+    cartItems.innerHTML += `
+
+    <div class="cart-item">
+
+        <div class="cart-item-info">
+
+            <h3>${item.name}</h3>
+
+            <p>Price: <strong>R${item.price.toFixed(2)}</strong></p>
+
+            <p>Total: <strong>R${lineTotal.toFixed(2)}</strong></p>
+
+        </div>
+
+        <div class="quantity-controls">
+
+            <button onclick="decreaseQuantity(${index})">−</button>
+
+            <span>${item.quantity}</span>
+
+            <button onclick="increaseQuantity(${index})">+</button>
+
+            <button class="remove-btn" onclick="removeItem(${index})">
+                <i class="fa-solid fa-trash"></i> Remove
+            </button>
+
+        </div>
+
+    </div>
+
+    `;
+
+});
 
     let total = 0;
 
