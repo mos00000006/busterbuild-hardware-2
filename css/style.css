@@ -166,7 +166,7 @@ nav ul a:hover{
 .hero{
     position:relative;
     height:85vh;
-    background:url("../pictures/backg1.jpeg") center center/cover no-repeat;
+    background:url("../hero.jpeg") center center/cover no-repeat;
     display:flex;
     align-items:center;
 }
