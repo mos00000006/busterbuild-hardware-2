@@ -82,7 +82,7 @@ header{
 ========================================== */
 
 .logo img{
-    height: 58px;
+    height: 50px;
     display:block;
 }
 
@@ -103,7 +103,7 @@ header{
 }
 
 .search button{
-    width:48px;
+    width:42px;
 }
 
 .search button:hover{
@@ -116,13 +116,13 @@ header{
 
 .icons{
     display:flex;
-    gap:10px;
+    gap: 8px;
     align-items: center;
 }
 
 .icons a{
     color:#222;
-    font-size:22px;
+    font-size:20px;
     transition:.3s;
 }
 
@@ -240,14 +240,14 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:70px;
+    font-size:52px;
     max-width:650px;
-    line-height:1.1;
+    line-height:1.01;
     margin-bottom:20px;
 }
 
 .hero p{
-    font-size:22px;
+    font-size:18px;
     max-width:600px;
     margin-bottom:40px;
 }
@@ -1330,7 +1330,7 @@ body{
     align-items:center;
     justify-content:space-between;
     gap:10px;
-    padding:12px 10px;
+    padding:10px;
 }
 /* ===== Mobile Top Bar ===== */
 
