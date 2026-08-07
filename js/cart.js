@@ -98,40 +98,6 @@ function displayCart() {
 
     let total = 0;
 
-    cart.forEach((item, index) => {
-
-        let lineTotal = item.price * item.quantity;
-
-        total += lineTotal;
-
-        cartItems.innerHTML += `
-
-        <div class="cart-item">
-
-            <h3>${item.name}</h3>
-
-            <p>Price: R${item.price.toFixed(2)}</p>
-
-            <p>Quantity: ${item.quantity}</p>
-
-            <p><strong>Total: R${lineTotal.toFixed(2)}</strong></p>
-
-            <div class="cart-buttons">
-
-                <button onclick="decreaseQuantity(${index})">−</button>
-
-                <button onclick="increaseQuantity(${index})">+</button>
-
-                <button onclick="removeItem(${index})">Remove</button>
-
-            </div>
-
-        </div>
-
-        `;
-
-    });
-
     cartTotal.textContent = "Total: R" + total.toFixed(2);
 
 }
@@ -397,7 +363,17 @@ function completeOrder(){
     }
 
 
-    orderMessage += "%0AProducts:%0A";
+    cart.forEach(function(item){
+
+    orderMessage +=
+    item.name +
+    " x" +
+    item.quantity +
+    " - R" +
+    (item.price * item.quantity).toFixed(2) +
+    "%0A";
+
+});
 
 
     cart.forEach((item, index) => {
