@@ -444,7 +444,7 @@ function completeOrder(){
     localStorage.setItem("lastOrder", JSON.stringify(cart));
 localStorage.removeItem("cart");
 
-window.location.href = "order-success.html";
+window.location.href = "success.html";
 
 }
 
