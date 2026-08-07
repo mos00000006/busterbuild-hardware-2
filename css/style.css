@@ -82,7 +82,7 @@ header{
 ========================================== */
 
 .logo img{
-    height:80px;
+    height: 58px;
     display:block;
 }
 
@@ -91,29 +91,19 @@ header{
 ========================================== */
 
 .search{
-    width:50%;
+    flex: 1;
     display:flex;
+    margin: 0 10px;
 }
 
 .search input{
-    flex:1;
-    padding:16px;
-    border:2px solid #D71920;
-    border-right:none;
-    border-radius:10px 0 0 10px;
-    outline:none;
-    font-size:16px;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
 }
 
 .search button{
-    width:70px;
-    border:none;
-    background:#D71920;
-    color:#fff;
-    border-radius:0 10px 10px 0;
-    cursor:pointer;
-    font-size:18px;
-    transition:.3s;
+    width:48px;
 }
 
 .search button:hover{
@@ -126,12 +116,13 @@ header{
 
 .icons{
     display:flex;
-    gap:25px;
+    gap:10px;
+    align-items: center;
 }
 
 .icons a{
     color:#222;
-    font-size:24px;
+    font-size:22px;
     transition:.3s;
 }
 
@@ -1333,4 +1324,11 @@ body{
     .quote-btn{
         display:none;
     }
+}
+.header-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:12px 10px;
 }
