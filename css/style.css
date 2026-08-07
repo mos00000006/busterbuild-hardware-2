@@ -131,10 +131,13 @@ nav .container{
 nav ul{
     display:flex;
     list-style:none;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
 }
 
 nav li{
-    margin-right:35px;
+    margin-right:0px;
 }
 
 nav a{
@@ -2113,4 +2116,26 @@ gap:12px;
     .hero p{
         font-size:18px;
     }
+}
+@media (max-width: 768px){
+
+    nav .container{
+        flex-direction:column;
+        gap:15px;
+        padding:15px 0;
+    }
+
+    nav ul{
+        gap:10px;
+    }
+
+    nav a{
+        padding:8px 0;
+        font-size:16px;
+    }
+
+    .quote-btn{
+        margin-top:0;
+    }
+
 }
