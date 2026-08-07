@@ -11,6 +11,7 @@
 html{
     scroll-behavior:smooth;
     overflow-x:hidden;
+    width: 100%;
 }
 
 body{
@@ -1562,6 +1563,9 @@ body{
     gap:20px;
     padding:20px 0;
     border-bottom:1px solid #eee;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .cart-item:last-child{
