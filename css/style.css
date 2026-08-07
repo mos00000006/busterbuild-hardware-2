@@ -144,7 +144,7 @@ header{
 ========================================== */
 
 nav{
-    background:#D71920;
+    overflow:auto;
 }
 
 nav .container{
@@ -154,23 +154,31 @@ nav .container{
 }
 
 nav ul{
-    list-style:none;
+
     display:flex;
-    width:100%;
-    justify-content:space-between;
+
+    flex-wrap:nowrap;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    gap:20px;
+
+    overflow-x:auto;
+
+    padding:15px;
+
+    scrollbar-width:none;
 }
 
 nav li{
-    margin:0;
+    flex: none;
 }
 
 nav a{
-    display:block;
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-    padding:16px 0;
-    transition:.3s;
+    white-space: nowrap;
+    font-size: 16px;
 }
 
 nav a:hover{
@@ -1275,4 +1283,50 @@ body{
 *::before,
 *::after{
     box-sizing:border-box;
+}
+/* ==========================================
+   MOBILE NAVIGATION FIX
+========================================== */
+
+@media (max-width:768px){
+
+    nav{
+        overflow-x:auto;
+    }
+
+    nav .container{
+        display:block;
+    }
+
+    nav ul{
+        display:flex !important;
+        flex-wrap:nowrap !important;
+        justify-content:flex-start !important;
+        align-items:center;
+        gap:20px;
+        padding:15px;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+    }
+
+    nav ul::-webkit-scrollbar{
+        display:none;
+    }
+
+    nav li{
+        flex:0 0 auto;
+        margin:0;
+    }
+
+    nav a{
+        white-space:nowrap;
+        font-size:16px;
+        padding:12px 0;
+    }
+
+    .quote-btn{
+        display:none;
+    }
+
 }
