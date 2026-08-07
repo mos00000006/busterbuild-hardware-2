@@ -5,7 +5,10 @@
     padding:0;
     box-sizing:border-box;
 }
-
+html,
+body{
+    overflow-x:hidden;
+}
 body{
     font-family:'Poppins',sans-serif;
     background:#f5f5f5;
@@ -2005,4 +2008,66 @@ gap:12px;
     object-fit: contain;  /* Keeps the whole image visible */
     display: block;
     margin: 0 auto 15px;
+}
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .top-bar .container{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .header-container{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .logo img{
+        height:60px;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .icons{
+        gap:18px;
+    }
+
+    nav .container{
+        flex-direction:column;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav li{
+        margin:0 12px;
+    }
+
+    .quote-btn{
+        margin:15px 0;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .location-grid,
+    .about-grid,
+    .contact-grid,
+    .product-details-grid{
+        grid-template-columns:1fr;
+    }
+
 }
