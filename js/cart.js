@@ -2,10 +2,10 @@
 // BUSTERBUILD CART
 // ===========================
 
-// Load cart from localStorage
+// Load cart
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Fix old cart items that don't have quantity
+// Fix old cart items
 cart = cart.map(item => ({
     name: item.name,
     price: Number(item.price),
@@ -18,22 +18,22 @@ localStorage.setItem("cart", JSON.stringify(cart));
 // ADD TO CART
 // ===========================
 
-function addToCart(name, price) {
+function addToCart(name, price){
 
     price = Number(price);
 
-    let existingItem = cart.find(item => item.name === name);
+    let existing = cart.find(item => item.name === name);
 
-    if (existingItem) {
+    if(existing){
 
-        existingItem.quantity++;
+        existing.quantity++;
 
-    } else {
+    }else{
 
         cart.push({
-            name: name,
-            price: price,
-            quantity: 1
+            name:name,
+            price:price,
+            quantity:1
         });
 
     }
@@ -50,21 +50,21 @@ function addToCart(name, price) {
 // UPDATE CART COUNT
 // ===========================
 
-function updateCartCount() {
+function updateCartCount(){
 
     let cartCount = document.getElementById("cart-count");
 
-    if (!cartCount) return;
+    if(!cartCount) return;
 
-    let totalItems = 0;
+    let total = 0;
 
-    cart.forEach(item => {
+    cart.forEach(item=>{
 
-        totalItems += Number(item.quantity);
+        total += Number(item.quantity);
 
     });
 
-    cartCount.textContent = totalItems;
+    cartCount.textContent = total;
 
 }
 
@@ -72,25 +72,25 @@ function updateCartCount() {
 // DISPLAY CART
 // ===========================
 
-function displayCart() {
+function displayCart(){
 
-    let cartItems = document.getElementById("cart-items");
-    let cartTotal = document.getElementById("cart-total");
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
 
-    if (!cartItems || !cartTotal) return;
+    if(!cartItems || !cartTotal) return;
 
     cartItems.innerHTML = "";
 
-    if (cart.length === 0) {
+    if(cart.length === 0){
 
         cartItems.innerHTML = `
-            <div class="cart-empty">
-                <h3>Your cart is empty.</h3>
-                <p>Add some products to start shopping.</p>
-            </div>
+        <div class="cart-empty">
+            <h3>Your cart is empty.</h3>
+            <p>Add products to start shopping.</p>
+        </div>
         `;
 
-        cartTotal.textContent = "Total: R0.00";
+        cartTotal.innerHTML = "Total: R0.00";
 
         return;
 
@@ -98,15 +98,54 @@ function displayCart() {
 
     let total = 0;
 
-    cartTotal.textContent = "Total: R" + total.toFixed(2);
+    cart.forEach((item,index)=>{
+
+        let lineTotal = item.price * item.quantity;
+
+        total += lineTotal;
+
+        cartItems.innerHTML += `
+
+        <div class="cart-item">
+
+            <div class="cart-item-info">
+
+                <h3>${item.name}</h3>
+
+                <p>Price: <strong>R${item.price.toFixed(2)}</strong></p>
+
+                <p>Total: <strong>R${lineTotal.toFixed(2)}</strong></p>
+
+            </div>
+
+            <div class="quantity-controls">
+
+                <button onclick="decreaseQuantity(${index})">−</button>
+
+                <span>${item.quantity}</span>
+
+                <button onclick="increaseQuantity(${index})">+</button>
+
+                <button class="remove-btn" onclick="removeItem(${index})">
+                    <i class="fa-solid fa-trash"></i> Remove
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+    cartTotal.innerHTML = "Total: R" + total.toFixed(2);
 
 }
-
 // ===========================
 // INCREASE QUANTITY
 // ===========================
 
-function increaseQuantity(index) {
+function increaseQuantity(index){
 
     cart[index].quantity++;
 
@@ -122,15 +161,15 @@ function increaseQuantity(index) {
 // DECREASE QUANTITY
 // ===========================
 
-function decreaseQuantity(index) {
+function decreaseQuantity(index){
 
-    if (cart[index].quantity > 1) {
+    if(cart[index].quantity > 1){
 
         cart[index].quantity--;
 
-    } else {
+    }else{
 
-        cart.splice(index, 1);
+        cart.splice(index,1);
 
     }
 
@@ -146,9 +185,9 @@ function decreaseQuantity(index) {
 // REMOVE ITEM
 // ===========================
 
-function removeItem(index) {
+function removeItem(index){
 
-    cart.splice(index, 1);
+    cart.splice(index,1);
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
@@ -164,9 +203,9 @@ function removeItem(index) {
 
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-function addToWishlist(name) {
+function addToWishlist(name){
 
-    if (!wishlist.includes(name)) {
+    if(!wishlist.includes(name)){
 
         wishlist.push(name);
 
@@ -174,7 +213,7 @@ function addToWishlist(name) {
 
         alert(name + " added to wishlist");
 
-    } else {
+    }else{
 
         alert(name + " is already in your wishlist");
 
@@ -182,62 +221,62 @@ function addToWishlist(name) {
 
 }
 
-function displayWishlist() {
+function displayWishlist(){
 
     let wishlistItems = document.getElementById("wishlist-items");
 
-    if (!wishlistItems) return;
+    if(!wishlistItems) return;
 
     wishlistItems.innerHTML = "";
 
-    if (wishlist.length === 0) {
+    if(wishlist.length === 0){
 
         wishlistItems.innerHTML = `
-            <div class="wishlist-box">
-                <i class="fa-solid fa-heart"></i>
-                <h3>Your Wishlist is Empty</h3>
-                <p>Products you save will appear here.</p>
-            </div>
+        <div class="wishlist-box">
+            <i class="fa-solid fa-heart"></i>
+            <h3>Your Wishlist is Empty</h3>
+            <p>Products you save will appear here.</p>
+        </div>
         `;
 
         return;
 
     }
 
-    wishlist.forEach((product, index) => {
+    wishlist.forEach((product,index)=>{
 
         wishlistItems.innerHTML += `
-            <div class="wishlist-card">
+        <div class="wishlist-card">
 
-                <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-heart"></i>
 
-                <h3>${product}</h3>
+            <h3>${product}</h3>
 
-                <button class="remove-wishlist-btn" onclick="removeFromWishlist(${index})">
+            <button class="remove-wishlist-btn"
+                onclick="removeFromWishlist(${index})">
 
-                    <i class="fa-solid fa-trash"></i>
+                <i class="fa-solid fa-trash"></i>
 
-                    Remove
+                Remove
 
-                </button>
+            </button>
 
-            </div>
+        </div>
         `;
 
     });
 
 }
 
-function removeFromWishlist(index) {
+function removeFromWishlist(index){
 
-    wishlist.splice(index, 1);
+    wishlist.splice(index,1);
 
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
     displayWishlist();
 
 }
-
 // ===========================
 // LOAD PAGE
 // ===========================
@@ -253,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function(){
     displayCheckout();
 
     loadPaymentTotal();
+
 });
 
 // ===========================
@@ -271,10 +311,8 @@ function displayCheckout(){
 
     cart.forEach(function(item){
 
-        let quantity = Number(item.quantity || 1);
-
-        let price = Number(item.price || 0);
-
+        let quantity = Number(item.quantity);
+        let price = Number(item.price);
         let total = quantity * price;
 
         subtotal += total;
@@ -299,21 +337,29 @@ function displayCheckout(){
 
     });
 
-    let delivery = subtotal >= 1000 ? 0 : 100;
+    let delivery = subtotal >= 1000 ? 0 : (subtotal > 0 ? 100 : 0);
 
     let grandTotal = subtotal + delivery;
 
-    document.getElementById("checkout-subtotal").innerHTML =
-    "R" + subtotal.toFixed(2);
+    const subtotalEl = document.getElementById("checkout-subtotal");
+    const deliveryEl = document.getElementById("checkout-delivery");
+    const totalEl = document.getElementById("checkout-total");
 
-    document.getElementById("checkout-delivery").innerHTML =
-    delivery === 0 ? "FREE" : "R" + delivery.toFixed(2);
+    if(subtotalEl) subtotalEl.innerHTML = "R" + subtotal.toFixed(2);
 
-    document.getElementById("checkout-total").innerHTML =
-    "R" + grandTotal.toFixed(2);
+    if(deliveryEl){
+        deliveryEl.innerHTML = delivery === 0 ? "FREE" : "R" + delivery.toFixed(2);
+    }
+
+    if(totalEl){
+        totalEl.innerHTML = "R" + grandTotal.toFixed(2);
+    }
 
 }
+
+// ===========================
 // PAYMENT PAGE
+// ===========================
 
 function loadPaymentTotal(){
 
@@ -325,7 +371,7 @@ function loadPaymentTotal(){
 
     });
 
-    if(total < 1000 && total > 0){
+    if(total > 0 && total < 1000){
 
         total += 100;
 
@@ -340,6 +386,9 @@ function loadPaymentTotal(){
     }
 
 }
+// ===========================
+// COMPLETE ORDER
+// ===========================
 
 function completeOrder(){
 
@@ -348,13 +397,11 @@ function completeOrder(){
     let customerAddress = localStorage.getItem("customerAddress") || "";
     let deliveryMethod = localStorage.getItem("deliveryMethod") || "";
 
-
     let orderMessage = "NEW BUSTERBUILD HARDWARE ORDER%0A%0A";
 
     orderMessage += "Customer: " + customerName + "%0A";
     orderMessage += "Phone: " + customerPhone + "%0A";
     orderMessage += "Delivery: " + deliveryMethod + "%0A";
-
 
     if(deliveryMethod === "Home Delivery"){
 
@@ -362,85 +409,45 @@ function completeOrder(){
 
     }
 
-
-    cart.forEach(function(item){
-
-    orderMessage +=
-    item.name +
-    " x" +
-    item.quantity +
-    " - R" +
-    (item.price * item.quantity).toFixed(2) +
-    "%0A";
-
-});
-
-
-    cart.forEach((item, index) => {
-
-    let lineTotal = item.price * item.quantity;
-
-    total += lineTotal;
-
-    cartItems.innerHTML += `
-
-    <div class="cart-item">
-
-        <div class="cart-item-info">
-
-            <h3>${item.name}</h3>
-
-            <p>Price: <strong>R${item.price.toFixed(2)}</strong></p>
-
-            <p>Total: <strong>R${lineTotal.toFixed(2)}</strong></p>
-
-        </div>
-
-        <div class="quantity-controls">
-
-            <button onclick="decreaseQuantity(${index})">−</button>
-
-            <span>${item.quantity}</span>
-
-            <button onclick="increaseQuantity(${index})">+</button>
-
-            <button class="remove-btn" onclick="removeItem(${index})">
-                <i class="fa-solid fa-trash"></i> Remove
-            </button>
-
-        </div>
-
-    </div>
-
-    `;
-
-});
+    orderMessage += "%0AProducts:%0A";
 
     let total = 0;
 
     cart.forEach(function(item){
 
-        total += item.price * item.quantity;
+        let lineTotal = item.price * item.quantity;
+
+        total += lineTotal;
+
+        orderMessage +=
+            item.name +
+            " x" +
+            item.quantity +
+            " - R" +
+            lineTotal.toFixed(2) +
+            "%0A";
 
     });
 
+    if(total > 0 && total < 1000){
 
-    orderMessage += "%0ATotal: R" + total.toFixed(2);
+        total += 100;
 
+    }
+
+    orderMessage += "%0A%0ATotal: R" + total.toFixed(2);
 
     localStorage.setItem("lastOrder", JSON.stringify(cart));
 
-
     localStorage.removeItem("cart");
-
 
     let storeWhatsApp = "27632513656";
 
-
     window.location.href =
-    "https://wa.me/" + storeWhatsApp + "?text=" + orderMessage;
+        "https://wa.me/" + storeWhatsApp + "?text=" + orderMessage;
 
 }
+
 // ===========================
 // PRODUCT SEARCH
 // ===========================
@@ -451,17 +458,13 @@ function searchProducts(){
 
     if(!input) return;
 
-
     let searchValue = input.value.toLowerCase();
 
-
     let products = document.querySelectorAll(".product-card");
-
 
     products.forEach(function(product){
 
         let productName = product.querySelector("h3").textContent.toLowerCase();
-
 
         if(productName.includes(searchValue)){
 
