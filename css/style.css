@@ -3089,3 +3089,97 @@ body{
     }
 
 }
+/* =========================================
+   CENTER SPECIAL OFFER TEXT ON MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .special-offers .offer-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .special-offers .offer-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .special-offers .offer-tag {
+        display: inline-block;
+    }
+
+    .special-offers .offer-text h2 {
+        text-align: center;
+    }
+
+    .special-offers .offer-text p {
+        text-align: center;
+    }
+
+    .special-offers .offer-btn {
+        display: block;
+        width: fit-content;
+        margin: 25px auto 0;
+    }
+
+    .special-offers .offer-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+/* =========================================
+   STORE LOCATION - MOBILE FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    .store-location .location-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .store-location .location-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .store-location .location-info h3 {
+        text-align: center;
+    }
+
+    .store-location .location-info p {
+        text-align: center;
+        line-height: 1.6;
+        margin-bottom: 22px;
+    }
+
+    .store-location .location-info p i {
+        margin-right: 8px;
+    }
+
+    .store-location .direction-btn {
+        display: block;
+        width: 90%;
+        max-width: 350px;
+        margin: 25px auto;
+        text-align: center;
+    }
+
+    .store-location .map {
+        width: 100%;
+        display: block;
+    }
+
+    .store-location .map iframe {
+        width: 100% !important;
+        height: 300px !important;
+        display: block;
+        border-radius: 20px;
+    }
+
+}
