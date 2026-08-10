@@ -1027,16 +1027,100 @@ nav a:hover{
    SPECIALS BANNER
 ========================================== */
 
+/* ==========================================
+   SPECIALS BANNER
+========================================== */
+
 .specials-banner{
-    height:450px;
+    min-height:650px;
+
     background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("../images/special-banner.jpg") center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("../pictures/specials-banner.jpeg") center center/cover no-repeat;
 
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+
+    position:relative;
+}
+
+.specials-banner-content{
+    color:#fff;
+    width:90%;
+    max-width:900px;
+}
+
+.specials-banner h1{
+    font-size:65px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.specials-banner p{
+    font-size:24px;
+    margin-bottom:35px;
+}
+
+.specials-btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    padding:18px 40px;
+
+    background:#FFC107;
+    color:#111;
+
+    text-decoration:none;
+    border-radius:12px;
+
+    font-size:20px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.specials-btn:hover{
+    background:#D71920;
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+
+/* ==========================================
+   SPECIALS BANNER - MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+    .specials-banner{
+        min-height:600px;
+
+        background-position:center center;
+    }
+
+    .specials-banner-content{
+        width:92%;
+    }
+
+    .specials-banner h1{
+        font-size:48px;
+        line-height:1.1;
+    }
+
+    .specials-banner p{
+        font-size:20px;
+        line-height:1.5;
+        margin-bottom:30px;
+    }
+
+    .specials-btn{
+        padding:17px 32px;
+        font-size:19px;
+    }
 }
 
 .specials-banner-content{
