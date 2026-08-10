@@ -3055,13 +3055,37 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
-/* Make specials image bigger on mobile */
+/* =========================================
+   SPECIAL OFFERS - MOBILE
+========================================= */
+
 @media (max-width: 768px) {
-    .specials-image {
-        width: 85% !important;
-        max-width: 380px !important;
+
+    .special-offers .offer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .special-offers .offer-text {
+        width: 100%;
+    }
+
+    .special-offers .offer-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    .special-offers .offer-image .specials-image {
+        width: 85vw !important;
+        max-width: 400px !important;
         height: auto !important;
         display: block !important;
-        margin: 25px auto !important;
+        object-fit: contain !important;
     }
+
 }
