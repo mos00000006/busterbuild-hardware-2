@@ -136,7 +136,9 @@ header{
 ========================================== */
 
 nav{
-    overflow:auto;
+    background:#D71920;
+    width:100%;
+    overflow:hidden;
 }
 
 nav .container{
@@ -146,35 +148,50 @@ nav .container{
 }
 
 nav ul{
-
     display:flex;
-
     flex-wrap:nowrap;
-
     justify-content:flex-start;
-
     align-items:center;
 
-    gap:20px;
+    gap:35px;
+
+    padding:15px 0;
+    margin:0;
+
+    list-style:none;
 
     overflow-x:auto;
-
-    padding:15px;
-
     scrollbar-width:none;
 }
 
+nav ul::-webkit-scrollbar{
+    display:none;
+}
+
 nav li{
-    flex: none;
+    flex:none;
+    list-style:none;
 }
 
 nav a{
-    white-space: nowrap;
-    font-size: 16px;
+    color:#fff;
+    white-space:nowrap;
+
+    font-size:18px;
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:.3s;
 }
 
 nav a:hover{
     color:#FFC107;
+}
+
+nav .quote-btn{
+    flex:none;
+    margin-left:30px;
 }
 
 /* ==========================================
@@ -1025,11 +1042,7 @@ nav a:hover{
 
 /* ==========================================
    SPECIALS BANNER
-========================================== */
-
-/* ==========================================
-   SPECIALS BANNER
-========================================== */
+========================================== *
 
 .specials-banner{
     min-height:650px;
