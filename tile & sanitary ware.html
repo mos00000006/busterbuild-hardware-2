@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tiles & Sanitary Ware | BusterBuild Hardware</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="js/cart.js" defer></script>
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+<div class="container">
+
+<div class="left">
+
+<i class="fa-solid fa-phone"></i>
+
++27 10 101 0464
+
+</div>
+
+
+<div class="center">
+
+Welcome to BusterBuild Hardware
+
+</div>
+
+
+<div class="right">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container header-container">
+
+
+<div class="logo">
+
+<a href="index.html">
+
+<img src="pictures/73c9395a-423f-44cf-8faa-4b0cabf5c998.png" alt="BusterBuild Hardware">
+
+</a>
+
+</div>
+
+
+
+<div class="search">
+
+<input type="text" placeholder="Search products..." onkeyup="searchProducts()">
+
+<button>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+</div>
+
+
+
+<div class="icons">
+
+
+<a href="account.html">
+
+<i class="fa-solid fa-user"></i>
+
+</a>
+
+
+<a href="wishlist.html">
+
+<i class="fa-solid fa-heart"></i>
+
+</a>
+
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cart-count">0</span>
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</header>
+
+
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="container">
+
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="specials.html">Specials</a></li>
+
+<li><a href="about.html">About Us</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+
+<a href="contact.html" class="quote-btn">
+
+Get Quote
+
+</a>
+
+
+</div>
+
+</nav>
+
+
+
+
+<!-- TILES & SANITARY WARE HERO -->
+
+<section class="page-banner tiles-sanitary-banner">
+
+<div class="overlay"></div>
+
+<div class="banner-text">
+
+<h1>Tiles & Sanitary Ware</h1>
+
+<p>Beautiful tiles and quality bathroom products for every space.</p>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- PRODUCTS -->
+
+<section class="products-page">
+
+<div class="container">
+
+
+<div class="product-grid">
+
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/dolomiti terraz dark gris.webp" alt="Ceramic Floor Tile">
+
+<h3>Dolomiti Terraz Dark Gris Floor Tile 600X600mm</h3>
+
+<p class="price">R179.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Dolomiti Terraz Dark Gris Floor Tile 600X600mm','179.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/luster cloud porcelain tile.webp" alt="Porcelain Tile">
+
+<h3>Luster Cloud Porcelain Tile 600x600mm Sugar Glazed</h3>
+
+<p class="price">R189.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Luster Cloud Porcelain Tile 600x600mm Sugar Glazed','189.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/oscar grey wall tile.webp" alt="Wall Tile">
+
+<h3>Oscar Grey Wall Tile Glossy 300X600mm</h3>
+
+<p class="price">R299.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Oscar Grey Wall Tile Glossy 300X600mm','299.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/powergripp ceramic adhesive.webp" alt="Tile Adhesive">
+
+<h3>Powergripp Ceramic Adhesive 24hr (20kg)</h3>
+
+<p class="price">R84.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Powergripp Ceramic Adhesive 24hr (20kg)','85.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+
+<!-- PRODUCT 5 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/florence close couple toilet.webp" alt="Toilet">
+
+<h3>Florence 2Pc Toilet With Seat P Trap 180mm</h3>
+
+<p class="price">R2,599.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Florence 2Pc Toilet With Seat P Trap 180mm','2,599.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+
+<!-- PRODUCT 6 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/basin shaily.webp" alt="Bathroom Basin">
+
+<h3>Bathroom Basin Shaily</h3>
+
+<p class="price">R199.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Bathroom Basin Shaily','199.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+
+<!-- PRODUCT 7 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/Mosco Carved Cabinet Set With Basin – White Combo 390x220mm.webp" alt="Bathroom Vanity">
+
+<h3>Mosco Carved Cabinet Set With Basin - White Combo 390x220mm</h3>
+
+<p class="price">R1,999.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Mosco Carved Cabinet Set With Basin - White Combo 390x220mm','1,999.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+
+<!-- PRODUCT 8 -->
+
+<div class="product-card">
+
+<img src="pictures/tiles & sanitary ware/bathtub with handles.webp" alt="Bathtub">
+
+<h3>Bathtub With Handles 1700mm</h3>
+
+<p class="price">R1,899.90</p>
+
+<a href="#" class="buy-btn"
+onclick="addToCart('Bathtub With Handles 1700mm','1899.90'); return false;">
+
+Add to Cart
+
+</a>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-bottom">
+
+<p>
+
+©️ 2026 BusterBuild Hardware. All Rights Reserved.
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+</body>
+
+</html>
