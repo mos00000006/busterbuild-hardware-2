@@ -475,3 +475,69 @@ function searchProducts(){
     });
 
 }
+// ===========================
+// BUSTERBUILD PRICE PROTECTION
+// ===========================
+
+// Check if customer is logged in
+function isCustomerLoggedIn(){
+
+    return localStorage.getItem("busterbuildLoggedIn") === "true";
+
+}
+
+
+// ===========================
+// HIDE PRICES FOR GUESTS
+// ===========================
+
+function protectPrices(){
+
+    const priceElements = document.querySelectorAll(
+        ".price, .special-price, .old-price, .product-price"
+    );
+
+    priceElements.forEach(function(priceElement){
+
+        // Save original price only once
+        if(!priceElement.dataset.originalPrice){
+
+            priceElement.dataset.originalPrice = priceElement.innerHTML;
+
+        }
+
+
+        // If customer is NOT logged in
+        if(!isCustomerLoggedIn()){
+
+            priceElement.innerHTML = `
+                <span class="login-price">
+                    <i class="fa-solid fa-eye-slash"></i>
+                    <span>Login to view price</span>
+                </span>
+            `;
+
+        }
+
+        // If customer IS logged in
+        else{
+
+            priceElement.innerHTML =
+                priceElement.dataset.originalPrice;
+
+        }
+
+    });
+
+}
+
+
+// ===========================
+// RUN PRICE PROTECTION
+// ===========================
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    protectPrices();
+
+});

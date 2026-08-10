@@ -9,6 +9,7 @@
 <title>Specials | BusterBuild Hardware</title>
 
 <link rel="stylesheet" href="css/style.css">
+
 <script src="js/cart.js"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +22,9 @@
 <body>
 
 
-<!-- TOP BAR -->
+<!-- ==========================================
+     TOP BAR
+========================================== -->
 
 <div class="top-bar">
 
@@ -31,7 +34,6 @@
 Quality Building Materials | Trusted Hardware Supplier
 </p>
 
-
 <div>
 
 <a href="#">
@@ -39,13 +41,11 @@ Quality Building Materials | Trusted Hardware Supplier
 Call Us
 </a>
 
-
 <a href="#">
 <i class="fa-brands fa-whatsapp"></i>
 WhatsApp
 </a>
 
-
 </div>
 
 </div>
@@ -54,8 +54,9 @@ WhatsApp
 
 
 
-
-<!-- HEADER -->
+<!-- ==========================================
+     HEADER
+========================================== -->
 
 <header>
 
@@ -64,7 +65,10 @@ WhatsApp
 
 <div class="logo">
 
-<img src="pictures/73c9395a-423f-44cf-8faa-4b0cabf5c998.png" alt="BusterBuild Hardware Logo">
+<img
+src="pictures/73c9395a-423f-44cf-8faa-4b0cabf5c998.png"
+alt="BusterBuild Hardware Logo"
+>
 
 </div>
 
@@ -72,10 +76,16 @@ WhatsApp
 
 <div class="search">
 
-<input type="text" placeholder="Search products...">
+<input
+type="text"
+id="search-input"
+placeholder="Search products..."
+>
 
-<button>
+<button onclick="searchProducts()">
+
 <i class="fa-solid fa-magnifying-glass"></i>
+
 </button>
 
 </div>
@@ -83,6 +93,16 @@ WhatsApp
 
 
 <div class="icons">
+
+<a href="account.html">
+<i class="fa-solid fa-user"></i>
+</a>
+
+
+<a href="wishlist.html">
+<i class="fa-solid fa-heart"></i>
+</a>
+
 
 <a href="cart.html">
 
@@ -99,7 +119,11 @@ WhatsApp
 
 </header>
 
-<!-- NAVIGATION -->
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
 
 <nav>
 
@@ -107,15 +131,25 @@ WhatsApp
 
 <ul>
 
-<li><a href="index.html">Home</a></li>
+<li>
+<a href="index.html">Home</a>
+</li>
 
-<li><a href="products.html">Products</a></li>
+<li>
+<a href="products.html">Products</a>
+</li>
 
-<li><a href="specials.html">Specials</a></li>
+<li>
+<a href="specials.html">Specials</a>
+</li>
 
-<li><a href="about.html">About Us</a></li>
+<li>
+<a href="about.html">About Us</a>
+</li>
 
-<li><a href="contact.html">Contact</a></li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
 
 </ul>
 
@@ -127,25 +161,22 @@ Get Quote
 
 </nav>
 
-</nav>
 
 
-
-
-
-
-<!-- SPECIAL BANNER -->
-
+<!-- ==========================================
+     SPECIAL BANNER
+========================================== -->
 
 <section class="specials-banner">
 
-
 <div class="specials-banner-content">
 
-
 <h1>
+
 <i class="fa-solid fa-tags"></i>
+
 BIG SPECIALS
+
 </h1>
 
 
@@ -154,42 +185,37 @@ Save big on building supplies, tools, paint and more
 </p>
 
 
-
 <a href="#special-products" class="specials-btn">
 
 <i class="fa-solid fa-bag-shopping"></i>
+
 Shop Deals
 
 </a>
 
-
 </div>
-
 
 </section>
 
 
 
-
-
-
-
-<!-- SPECIAL PRODUCTS -->
-
+<!-- ==========================================
+     SPECIAL PRODUCTS
+========================================== -->
 
 <section class="special-products" id="special-products">
-
 
 <div class="container">
 
 
-
 <div class="section-title">
 
-
 <h2>
+
 <i class="fa-solid fa-fire"></i>
+
 Current Special Offers
+
 </h2>
 
 
@@ -197,10 +223,7 @@ Current Special Offers
 Limited time deals available now
 </p>
 
-
 </div>
-
-
 
 
 
@@ -208,11 +231,9 @@ Limited time deals available now
 
 
 
-
-
-
-<!-- PRODUCT 1 -->
-
+<!-- ==========================================
+     PRODUCT 1
+========================================== -->
 
 <div class="special-card">
 
@@ -222,7 +243,10 @@ Limited time deals available now
 </span>
 
 
-<img src="images/cement.jpg" alt="Cement">
+<img
+src="images/cement.jpg"
+alt="AfriSam Cement 50kg"
+>
 
 
 <div class="special-card-content">
@@ -233,40 +257,41 @@ AfriSam Cement 50kg
 </h3>
 
 
-<p class="old-price">
-R120.00
-</p>
+<!-- LOGIN TO VIEW PRICE -->
+
+<div class="price-login-info">
+
+<i class="fa-solid fa-eye-slash"></i>
+
+<strong>
+Login to view price
+</strong>
+
+</div>
 
 
-<p class="special-price">
-R99.90
-</p>
 
-
-
-<button class="cart-btn" onclick="addToCart('AfriSam Cement 50kg','99.90')">
+<button
+class="cart-btn"
+onclick="addToCart('AfriSam Cement 50kg','99.90')"
+>
 
 <i class="fa-solid fa-cart-plus"></i>
+
 Add To Cart
 
 </button>
 
 
+</div>
 
 </div>
 
 
-</div>
 
-
-
-
-
-
-
-
-<!-- PRODUCT 2 -->
-
+<!-- ==========================================
+     PRODUCT 2
+========================================== -->
 
 <div class="special-card">
 
@@ -276,7 +301,10 @@ Add To Cart
 </span>
 
 
-<img src="images/paint.jpg" alt="Paint">
+<img
+src="images/paint.jpg"
+alt="Premium Wall Paint 20L"
+>
 
 
 <div class="special-card-content">
@@ -287,41 +315,41 @@ Premium Wall Paint 20L
 </h3>
 
 
-<p class="old-price">
-R899.90
-</p>
+<!-- LOGIN TO VIEW PRICE -->
+
+<div class="price-login-info">
+
+<i class="fa-solid fa-eye-slash"></i>
+
+<strong>
+Login to view price
+</strong>
+
+</div>
 
 
-<p class="special-price">
-R699.90
-</p>
 
-
-
-<button class="cart-btn" onclick="addToCart('Premium Wall Paint 20L','699.90')">
+<button
+class="cart-btn"
+onclick="addToCart('Premium Wall Paint 20L','699.90')"
+>
 
 <i class="fa-solid fa-cart-plus"></i>
+
 Add To Cart
 
 </button>
 
 
+</div>
 
 </div>
 
 
-</div>
 
-
-
-
-
-
-
-
-
-<!-- PRODUCT 3 -->
-
+<!-- ==========================================
+     PRODUCT 3
+========================================== -->
 
 <div class="special-card">
 
@@ -331,7 +359,10 @@ Add To Cart
 </span>
 
 
-<img src="images/tools.jpg" alt="Tools">
+<img
+src="images/tools.jpg"
+alt="Professional Tool Kit"
+>
 
 
 <div class="special-card-content">
@@ -342,90 +373,77 @@ Professional Tool Kit
 </h3>
 
 
-<p class="old-price">
-R999.90
-</p>
+<!-- LOGIN TO VIEW PRICE -->
+
+<div class="price-login-info">
+
+<i class="fa-solid fa-eye-slash"></i>
+
+<strong>
+Login to view price
+</strong>
+
+</div>
 
 
-<p class="special-price">
-R749.90
-</p>
 
-
-
-<button class="cart-btn" onclick="addToCart('Professional Tool Kit','749.90')">
+<button
+class="cart-btn"
+onclick="addToCart('Professional Tool Kit','749.90')"
+>
 
 <i class="fa-solid fa-cart-plus"></i>
+
 Add To Cart
 
 </button>
 
 
-
 </div>
 
-
 </div>
-
-
 
 
 
 </div>
 
-
 </div>
-
 
 </section>
 
 
 
-
-
-
-
-
-<!-- FOOTER -->
-
+<!-- ==========================================
+     FOOTER
+========================================== -->
 
 <footer class="footer">
 
-
 <div class="container">
-
 
 <div class="footer-grid">
 
 
-
 <div class="footer-column">
-
 
 <h3>
 BusterBuild Hardware
 </h3>
-
 
 <p>
 Your trusted hardware store for quality building materials,
 tools, paint and construction supplies.
 </p>
 
-
 </div>
-
-
 
 
 
 <div class="footer-column">
 
-
 <h3>
 Quick Links
 </h3>
-
 
 <ul>
 
@@ -435,13 +453,11 @@ Home
 </a>
 </li>
 
-
 <li>
 <a href="about.html">
 About Us
 </a>
 </li>
-
 
 <li>
 <a href="contact.html">
@@ -449,45 +465,40 @@ Contact
 </a>
 </li>
 
-
 </ul>
 
-
 </div>
-
-
-
 
 
 
 <div class="footer-column">
 
-
 <h3>
 Contact
 </h3>
 
-
 <p>
+
 <i class="fa-solid fa-phone"></i>
+
 +27 10 101 0464
+
 </p>
 
 
 <p>
+
 <i class="fa-solid fa-location-dot"></i>
-CNR R558 & K1503 ROAD ISIXAXABESHA STREET PROTEA GLEN EXT 6, SOWETO
+
+CNR R558 & K1503 ROAD ISIXAXABESHA STREET
+PROTEA GLEN EXT 6, SOWETO
+
 </p>
 
-
 </div>
 
 
-
-
 </div>
-
-
 
 
 
@@ -495,25 +506,18 @@ CNR R558 & K1503 ROAD ISIXAXABESHA STREET PROTEA GLEN EXT 6, SOWETO
 
 
 
-
 <div class="footer-bottom">
 
-
 <p>
-© 2026 BusterBuild Hardware. All Rights Reserved.
+©️ 2026 BusterBuild Hardware. All Rights Reserved.
 </p>
 
-
 </div>
 
 
-
 </div>
-
 
 </footer>
-
-
 
 
 
