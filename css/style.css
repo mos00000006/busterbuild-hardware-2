@@ -143,19 +143,23 @@ nav{
 
 nav .container{
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
+    width:100%;
+    max-width:1400px;
+    margin:auto;
 }
 
 nav ul{
     display:flex;
-    flex-wrap:nowrap;
-    justify-content:flex-start;
+    justify-content:center;
     align-items:center;
 
-    gap:35px;
+    gap:55px;
 
-    padding:15px 0;
+    width:100%;
+
+    padding:18px 0;
     margin:0;
 
     list-style:none;
@@ -177,8 +181,8 @@ nav a{
     color:#fff;
     white-space:nowrap;
 
-    font-size:18px;
-    font-weight:600;
+    font-size:24px;
+    font-weight:700;
 
     text-decoration:none;
 
@@ -189,9 +193,9 @@ nav a:hover{
     color:#FFC107;
 }
 
+/* Hide Get Quote */
 nav .quote-btn{
-    flex:none;
-    margin-left:30px;
+    display:none;
 }
 
 /* ==========================================
